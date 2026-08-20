@@ -30,42 +30,20 @@ static NSString * const kCellIdentifier = @"ImageCell";
     NSInteger len = [self lengthOfLongestSubstring:@"abcabcbb"];
     NSLog(@">>>%ld", len); // 输出3
     
-    UIEdgeInsets insets = UIEdgeInsetsZero;
-    // 1. 获取所有连接中的场景
-    NSSet<UIScene *> *scenes = UIApplication.sharedApplication.connectedScenes;
-    UIWindowScene *foregroundActiveScene = nil;
-    // 2. 优先寻找前台活跃的 WindowScene（当前用户正在交互的）
-    for (UIWindowScene *scene in scenes) {
-        if (scene.activationState == UISceneActivationStateForegroundActive) {
-            foregroundActiveScene = scene;
-            break;
-        }
-    }
-    // 3. 如果没找到活跃的，退而求其次找前台非活跃的（例如下拉通知栏时）
-    if (!foregroundActiveScene) {
-        for (UIWindowScene *scene in scenes) {
-            if (scene.activationState == UISceneActivationStateForegroundInactive) {
-                foregroundActiveScene = scene;
-                break;
-            }
-        }
-    }
-    // 4. 通过场景拿到窗口（这里不使用 UIApplication.windows，而是用 scene.windows）
-    UIWindow *targetWindow = foregroundActiveScene.windows.firstObject;
-    // 更好的做法：在场景的窗口中找到真正的 keyWindow
-    for (UIWindow *window in foregroundActiveScene.windows) {
-        if (window.isKeyWindow) {
-            targetWindow = window;
-            break;
-        }
-    }
-    insets = targetWindow.safeAreaInsets;
-    
+    UIEdgeInsets insets = [self getWindowSafeAreaInset];
     CycleMenuView *cycle = [[CycleMenuView alloc] initWithFrame:CGRectMake(0, 60, self.view.bounds.size.width / 2, self.view.bounds.size.width / 2)];
     cycle.clickItemBlock = ^(NSString * str) {
         [self simulateMainThreadBlock];
 //        [self simulateChildLongTask];
-        [self pushToDeepseekChatVC];
+        if ([str isEqualToString:@"我的"]) {
+            [self pushToDeepseekChatVC];
+        } else if ([str isEqualToString:@"设置"]) {
+            [self pushToSwiftUIVC];
+        } else {
+            
+        }
+        
+        
     };
     [self.view addSubview:cycle];
     
@@ -230,6 +208,11 @@ static NSString * const kCellIdentifier = @"ImageCell";
     [self.navigationController pushViewController:chatVC animated:YES];
 }
 
+- (void)pushToSwiftUIVC {
+    TaskFlowVC *vc = [TaskFlowVC new];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 - (void)showMetalCircleAniView {
     // 1. 创建背景容器
     UIView *containerView = [[UIView alloc] init];
@@ -265,6 +248,40 @@ static NSString * const kCellIdentifier = @"ImageCell";
             [mtkView.leadingAnchor constraintEqualToAnchor:containerView.leadingAnchor],
             [mtkView.trailingAnchor constraintEqualToAnchor:containerView.trailingAnchor]
         ]];
+}
+
+- (UIEdgeInsets)getWindowSafeAreaInset {
+    UIEdgeInsets insets = UIEdgeInsetsZero;
+    // 1. 获取所有连接中的场景
+    NSSet<UIScene *> *scenes = UIApplication.sharedApplication.connectedScenes;
+    UIWindowScene *foregroundActiveScene = nil;
+    // 2. 优先寻找前台活跃的 WindowScene（当前用户正在交互的）
+    for (UIWindowScene *scene in scenes) {
+        if (scene.activationState == UISceneActivationStateForegroundActive) {
+            foregroundActiveScene = scene;
+            break;
+        }
+    }
+    // 3. 如果没找到活跃的，退而求其次找前台非活跃的（例如下拉通知栏时）
+    if (!foregroundActiveScene) {
+        for (UIWindowScene *scene in scenes) {
+            if (scene.activationState == UISceneActivationStateForegroundInactive) {
+                foregroundActiveScene = scene;
+                break;
+            }
+        }
+    }
+    // 4. 通过场景拿到窗口（这里不使用 UIApplication.windows，而是用 scene.windows）
+    UIWindow *targetWindow = foregroundActiveScene.windows.firstObject;
+    // 更好的做法：在场景的窗口中找到真正的 keyWindow
+    for (UIWindow *window in foregroundActiveScene.windows) {
+        if (window.isKeyWindow) {
+            targetWindow = window;
+            break;
+        }
+    }
+    insets = targetWindow.safeAreaInsets;
+    return insets;
 }
 
 @end

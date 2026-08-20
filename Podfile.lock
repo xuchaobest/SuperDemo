@@ -1,52 +1,8 @@
 PODS:
-  - AFNetworking (4.0.1):
-    - AFNetworking/NSURLSession (= 4.0.1)
-    - AFNetworking/Reachability (= 4.0.1)
-    - AFNetworking/Security (= 4.0.1)
-    - AFNetworking/Serialization (= 4.0.1)
-    - AFNetworking/UIKit (= 4.0.1)
-  - AFNetworking/NSURLSession (4.0.1):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (4.0.1)
-  - AFNetworking/Security (4.0.1)
-  - AFNetworking/Serialization (4.0.1)
-  - AFNetworking/UIKit (4.0.1):
-    - AFNetworking/NSURLSession
   - Aspects (1.4.1)
-  - Checkout (4.4.0):
-    - CheckoutEventLoggerKit (~> 1.2.4)
-    - Risk (~> 4.0.1)
-  - CheckoutEventLoggerKit (1.2.4)
-  - FingerprintPro (2.16.0)
-  - Frames (4.4.0):
-    - Checkout (= 4.4.0)
-    - CheckoutEventLoggerKit (~> 1.2.4)
-    - PhoneNumberKit (~> 4.0)
-  - IKEventSource (3.0.1)
-  - KeychainAccess (4.2.2)
-  - Masonry (1.1.0)
-  - MBProgressHUD (1.2.0)
-  - MJExtension (3.4.2)
-  - MJRefresh (3.7.9)
-  - PhoneNumberKit (4.3.0):
-    - PhoneNumberKit/PhoneNumberKitCore (= 4.3.0)
-    - PhoneNumberKit/UIKit (= 4.3.0)
-  - PhoneNumberKit/PhoneNumberKitCore (4.3.0)
-  - PhoneNumberKit/UIKit (4.3.0):
-    - PhoneNumberKit/PhoneNumberKitCore
-  - Risk (4.0.1):
-    - CheckoutEventLoggerKit (~> 1.2.4)
-    - FingerprintPro (< 3.0.0, >= 2.7.0)
-  - SDWebImage (5.21.7):
-    - SDWebImage/Core (= 5.21.7)
-  - SDWebImage/Core (5.21.7)
-  - SocketRocket (0.7.1)
   - WCDB.swift (2.1.16):
     - WCDBOptimizedSQLCipher (= 1.4.8)
   - WCDBOptimizedSQLCipher (1.4.8)
-  - YYAsyncLayer (1.0)
   - YYCache (1.0.4)
   - YYCategories (1.0.4):
     - YYCategories/no-arc (= 1.0.4)
@@ -62,20 +18,8 @@ PODS:
     - YYImage
 
 DEPENDENCIES:
-  - AFNetworking (from `./DevelopmentPods/AFNetworking`)
   - Aspects (~> 1.4.1)
-  - Frames (~> 4)
-  - IKEventSource (from `./DevelopmentPods/EventSource`)
-  - KeychainAccess
-  - Masonry
-  - MBProgressHUD
-  - MJExtension
-  - MJRefresh
-  - SDWebImage
-  - SocketRocket
   - WCDB.swift (from `https://gitee.com/mirrors_Tencent/wcdb.git`, tag `v2.1.16`)
-  - YYAsyncLayer
-  - YYCache
   - YYCategories
   - YYDispatchQueuePool
   - YYImage
@@ -86,21 +30,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Aspects
-    - Checkout
-    - CheckoutEventLoggerKit
-    - FingerprintPro
-    - Frames
-    - KeychainAccess
-    - Masonry
-    - MBProgressHUD
-    - MJExtension
-    - MJRefresh
-    - PhoneNumberKit
-    - Risk
-    - SDWebImage
-    - SocketRocket
     - WCDBOptimizedSQLCipher
-    - YYAsyncLayer
     - YYCache
     - YYCategories
     - YYDispatchQueuePool
@@ -110,10 +40,6 @@ SPEC REPOS:
     - YYWebImage
 
 EXTERNAL SOURCES:
-  AFNetworking:
-    :path: "./DevelopmentPods/AFNetworking"
-  IKEventSource:
-    :path: "./DevelopmentPods/EventSource"
   WCDB.swift:
     :git: https://gitee.com/mirrors_Tencent/wcdb.git
     :tag: v2.1.16
@@ -124,25 +50,9 @@ CHECKOUT OPTIONS:
     :tag: v2.1.16
 
 SPEC CHECKSUMS:
-  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
-  Checkout: 74ea5696bde3c3b85656c2b5c6446a07c8e89195
-  CheckoutEventLoggerKit: b780dec46295a34942780ea6230d0d5fd08aa05a
-  FingerprintPro: d23a0640d3b2febf1d4e877cad3793b74e08e18c
-  Frames: cfe3e6809097ca3a08d0e935103195833512bf61
-  IKEventSource: ababa323587c6b0c250dd54d4a48ab68fd845e8e
-  KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
-  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
-  MJExtension: e97d164cb411aa9795cf576093a1fa208b4a8dd8
-  MJRefresh: ff9e531227924c84ce459338414550a05d2aea78
-  PhoneNumberKit: d8a400a22cea696c20028ebfdf75560dc31144e1
-  Risk: e8ee31ba847b6cce1d4c384a9bb49d78fc34cdc5
-  SDWebImage: e9fc87c1aab89a8ab1bbd74eba378c6f53be8abf
-  SocketRocket: d4aabe649be1e368d1318fdf28a022d714d65748
   WCDB.swift: d9c65b12e4ca9c97387c75c2393a50d9649d99e0
   WCDBOptimizedSQLCipher: 871994f7f620302fdf87a2729c099a1efa2223da
-  YYAsyncLayer: df6b01ebc695c5f6b4c15dd5c23fa3e081eb25c0
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
   YYDispatchQueuePool: 3dfb2274bcc74207688dde8ac6f7bdd46871dd7b
@@ -151,6 +61,6 @@ SPEC CHECKSUMS:
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: c0d5110c90a948267e8465bc6d120ad75db7bd54
+PODFILE CHECKSUM: d2100390589af4af85eaad3a2359fbdfe44beaba
 
 COCOAPODS: 1.17.0

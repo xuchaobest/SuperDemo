@@ -1,0 +1,22 @@
+# 编译产物
+DerivedData/
+Build/
+Products/
+
+# 依赖管理
+Pods/
+Podfile.lock
+Flutter/ios/Flutter.podspec
+
+# 日志
+*.log
+
+# 敏感配置
+*.xcconfig
+GoogleService-Info.plist
+Secrets.swift
+
+# 临时文件
+*.tmp
+*.swp
+*.DS_Store
