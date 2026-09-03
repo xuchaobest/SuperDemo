@@ -1,21 +1,7 @@
 ${PODS_ROOT}/Target Support Files/Pods-demo/Pods-demo-frameworks.sh
-${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework
 ${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework
-${BUILT_PRODUCTS_DIR}/Checkout/Checkout.framework
-${BUILT_PRODUCTS_DIR}/Frames/Frames.framework
-${BUILT_PRODUCTS_DIR}/IKEventSource/IKEventSource.framework
-${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework
-${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework
-${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework
-${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework
-${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework
-${BUILT_PRODUCTS_DIR}/PhoneNumberKit/PhoneNumberKit.framework
-${BUILT_PRODUCTS_DIR}/Risk/Risk.framework
-${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
-${BUILT_PRODUCTS_DIR}/SocketRocket/SocketRocket.framework
 ${BUILT_PRODUCTS_DIR}/WCDB.swift/WCDBSwift.framework
 ${BUILT_PRODUCTS_DIR}/WCDBOptimizedSQLCipher/sqlcipher.framework
-${BUILT_PRODUCTS_DIR}/YYAsyncLayer/YYAsyncLayer.framework
 ${BUILT_PRODUCTS_DIR}/YYCache/YYCache.framework
 ${BUILT_PRODUCTS_DIR}/YYCategories/YYCategories.framework
 ${BUILT_PRODUCTS_DIR}/YYDispatchQueuePool/YYDispatchQueuePool.framework
@@ -23,5 +9,3 @@ ${BUILT_PRODUCTS_DIR}/YYImage/YYImage.framework
 ${BUILT_PRODUCTS_DIR}/YYKeyboardManager/YYKeyboardManager.framework
 ${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework
 ${BUILT_PRODUCTS_DIR}/YYWebImage/YYWebImage.framework
-${PODS_XCFRAMEWORKS_BUILD_DIR}/CheckoutEventLoggerKit/CheckoutEventLoggerKit.framework/CheckoutEventLoggerKit
-${PODS_XCFRAMEWORKS_BUILD_DIR}/FingerprintPro/FingerprintPro.framework/FingerprintPro
